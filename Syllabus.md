@@ -4,109 +4,92 @@ This document describes the **real, end-to-end Machine Learning lifecycle used i
 Every ML interview question, project, and job role fits somewhere in this pipeline.
 
 ---
-
 ## PART 1 — COMPLETE MACHINE LEARNING PIPELINE (INDUSTRY FLOW)
 
+```text
 DATA SOURCES
-│
 ├── Structured (Databases, CSV, Tables)
 ├── Semi-Structured (JSON, Logs)
-├── Unstructured (Text, Images, Streams)
-│
-▼
+└── Unstructured (Text, Images, Streams)
+
+↓
 DATA INGESTION (BIG DATA CONTEXT)
-│
 ├── Batch Ingestion (Files, DB dumps)
-├── Streaming Ingestion (Kafka, Event streams)
-│
-▼
+└── Streaming Ingestion (Kafka, Event streams)
+
+↓
 DATA STORAGE
-│
 ├── Data Lakes (HDFS, S3, ADLS)
-├── Columnar Formats (Parquet, ORC)
-│
-▼
+└── Columnar Formats (Parquet, ORC)
+
+↓
 DATA PROCESSING (PYSPARK CORE)
-│
 ├── SparkSession
 ├── DataFrames
 ├── Transformations & Actions
 ├── Partitioning & Shuffling
-├── Caching & Persistence
-│
-▼
+└── Caching & Persistence
+
+↓
 DATA CLEANING
-│
 ├── Handling missing values
 ├── Outlier treatment
 ├── Data type corrections
-├── Deduplication
-│
-▼
+└── Deduplication
+
+↓
 EXPLORATORY DATA ANALYSIS (EDA)
-│
 ├── Statistical summaries
 ├── Distribution analysis
-├── Correlation analysis
-│
-▼
+└── Correlation analysis
+
+↓
 FEATURE ENGINEERING
-│
 ├── Categorical encoding
 ├── Scaling & normalization
 ├── Feature selection
-├── Feature extraction
-│
-▼
+└── Feature extraction
+
+↓
 TRAIN / VALIDATION / TEST SPLIT
-│
-▼
+
+↓
 MODEL SELECTION
-│
 ├── Regression
 ├── Classification
-├── Clustering
-│
-▼
+└── Clustering
+
+↓
 MODEL TRAINING (Spark MLlib / scikit-learn)
-│
 ├── Model fitting
-├── Parallel & distributed training
-│
-▼
+└── Parallel & distributed training
+
+↓
 MODEL EVALUATION
-│
 ├── Metrics (Accuracy, Precision, Recall, RMSE, AUC)
-├── Cross-validation
-│
-▼
+└── Cross-validation
+
+↓
 HYPERPARAMETER TUNING
-│
 ├── Grid Search
-├── CrossValidator (Spark)
-│
-▼
+└── CrossValidator (Spark)
+
+↓
 MODEL INTERPRETATION
-│
 ├── Feature importance
-├── Explainability (basic XAI)
-│
-▼
+└── Explainability (basic XAI)
+
+↓
 MODEL DEPLOYMENT
-│
 ├── Batch inference
 ├── Streaming inference
-├── REST API integration
-│
-▼
+└── REST API integration
+
+↓
 MONITORING & RETRAINING
-│
 ├── Data drift detection
 ├── Model performance decay
-├── Retraining pipelines
-
-yaml
-Copy code
+└── Retraining pipelines
 
 ---
 
