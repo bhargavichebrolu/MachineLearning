@@ -4,6 +4,7 @@ This document describes the **real, end-to-end Machine Learning lifecycle used i
 Every ML interview question, project, and job role fits somewhere in this pipeline.
 
 ---
+
 ## PART 1 — COMPLETE MACHINE LEARNING PIPELINE (INDUSTRY FLOW)
 
 ```text
@@ -90,157 +91,164 @@ MONITORING & RETRAINING
 ├── Data drift detection
 ├── Model performance decay
 └── Retraining pipelines
+PART 2 — PYSPARK LEARNING FLOW (NO SKIPS)
+PySpark Fundamentals (MUST)
+Spark architecture (Driver, Executor, Cluster Manager)
 
----
+SparkSession
 
-## PART 2 — PYSPARK LEARNING FLOW (NO SKIPS)
+DataFrames vs RDDs (why DataFrames are preferred)
 
-### PySpark Fundamentals (MUST)
-- Spark architecture (Driver, Executor, Cluster Manager)
-- SparkSession
-- DataFrames vs RDDs (why DataFrames are preferred)
-- Lazy evaluation
-- Transformations vs Actions
+Lazy evaluation
 
-### PySpark Core Operations (MUST)
-- `select`, `filter`, `withColumn`
-- `groupBy`, `agg`
-- Joins (inner, left, broadcast)
-- Window functions
-- UDFs (and why to avoid them when possible)
+Transformations vs Actions
 
-### Performance & Scaling (HIGH VALUE)
-- Partitioning strategies
-- Shuffles
-- Caching & persistence
-- Executor memory and core configuration
-- Wide vs narrow transformations
+PySpark Core Operations (MUST)
+select, filter, withColumn
 
-### PySpark MLlib (MUST)
-- ML Pipelines
-- Estimators & Transformers
-- VectorAssembler
-- Model persistence (save/load)
+groupBy, agg
 
----
+Joins (inner, left, broadcast)
 
-## PART 3 — MACHINE LEARNING FUNDAMENTALS (NON-NEGOTIABLE)
+Window functions
 
-### Supervised Learning (CORE)
-- Linear Regression
-- Logistic Regression
-- Decision Trees
-- Random Forests
-- Gradient Boosting
+UDFs (and why to avoid them when possible)
 
-### Unsupervised Learning (CORE)
-- K-Means
-- Hierarchical Clustering
-- Dimensionality Reduction (PCA)
+Performance & Scaling (HIGH VALUE)
+Partitioning strategies
 
-### Evaluation Metrics (INTERVIEW CRITICAL)
-- Regression: MAE, MSE, RMSE, R²
-- Classification: Accuracy, Precision, Recall, F1-score, ROC-AUC
-- Confusion Matrix
+Shuffles
 
-### Bias–Variance Tradeoff (MUST KNOW)
-- Underfitting vs Overfitting
-- Regularization (L1, L2)
+Caching & persistence
 
----
+Executor memory and core configuration
 
-## PART 4 — MATHEMATICAL FOUNDATIONS (ABSOLUTELY REQUIRED)
+Wide vs narrow transformations
 
-### Linear Algebra (ABSOLUTE CORE)
-- Scalars, vectors, matrices
-- Matrix multiplication
-- Transpose & inverse
-- Rank
-- Eigenvalues & eigenvectors
-- Dot product & vector norms
+PySpark MLlib (MUST)
+ML Pipelines
 
-**Used in:**
-- Linear Regression
-- PCA
-- Optimization
+Estimators & Transformers
 
----
+VectorAssembler
 
-### Probability (ABSOLUTE CORE)
-- Random variables
-- Probability distributions
-- Conditional probability
-- Bayes’ Theorem
-- Expectation & variance
+Model persistence (save / load)
 
-**Used in:**
-- Logistic Regression
-- Naive Bayes
-- Uncertainty reasoning
+PART 3 — MACHINE LEARNING FUNDAMENTALS (NON-NEGOTIABLE)
+Supervised Learning (CORE)
+Linear Regression
 
----
+Logistic Regression
 
-### Statistics (ABSOLUTE CORE)
-- Mean, median, variance, standard deviation
-- Sampling techniques
-- Hypothesis testing
-- Confidence intervals
-- Correlation vs causation
+Decision Trees
 
-**Used in:**
-- EDA
-- Model evaluation
-- Decision making
+Random Forests
 
----
+Gradient Boosting
 
-### Optimization (IMPORTANT)
-- Loss functions
-- Gradient Descent
-- Convex vs non-convex optimization
-- Learning rate intuition
+Unsupervised Learning (CORE)
+K-Means
 
----
+Hierarchical Clustering
 
-## PART 5 — ADVANCED BUT JOB-RELEVANT TOPICS
+Dimensionality Reduction (PCA)
 
-### Natural Language Processing (NEEDED)
-- Tokenization
-- TF-IDF
-- Word embeddings (basic)
-- NLP pipelines using Spark
+Evaluation Metrics (INTERVIEW-CRITICAL)
+Regression: MAE, MSE, RMSE, R²
 
-### Recommendation Systems (NEEDED)
-- Collaborative filtering
-- Content-based filtering
-- Matrix factorization
+Classification: Accuracy, Precision, Recall, F1-score, ROC-AUC
 
-### Explainable AI (IMPORTANT)
-- Feature importance
-- Model transparency fundamentals
+Confusion Matrix
 
----
+Bias–Variance Tradeoff (MUST KNOW)
+Underfitting vs Overfitting
 
-## PART 6 — PRIORITY TABLE (NO AMBIGUITY)
+Regularization (L1, L2)
 
-| Priority | Topic                         | Mandatory for Job |
-|--------|-------------------------------|-------------------|
-| P0     | Linear Algebra                | YES               |
-| P0     | Probability & Statistics      | YES               |
-| P0     | ML Fundamentals               | YES               |
-| P0     | PySpark Core & DataFrames     | YES               |
-| P0     | Feature Engineering           | YES               |
-| P0     | Model Evaluation              | YES               |
-| P1     | Spark Performance Tuning      | YES               |
-| P1     | MLlib Pipelines               | YES               |
-| P1     | NLP Basics                    | YES               |
-| P1     | Recommendation Systems        | YES               |
-| P2     | Advanced XAI                  | Nice to have      |
-| P2     | Certifications                | Optional          |
+PART 4 — MATHEMATICAL FOUNDATIONS (ABSOLUTELY REQUIRED)
+Linear Algebra (ABSOLUTE CORE)
+Scalars, vectors, matrices
 
----
+Matrix multiplication
 
-## FINAL NOTE
+Transpose & inverse
 
-This roadmap is **complete, industry-aligned, and interview-safe**.  
-Nothing essential is missing. Execution and depth decide outcomes.
+Rank
+
+Eigenvalues & eigenvectors
+
+Dot product & vector norms
+
+Used in: Linear Regression, PCA, Optimization
+
+Probability (ABSOLUTE CORE)
+Random variables
+
+Probability distributions
+
+Conditional probability
+
+Bayes’ Theorem
+
+Expectation & variance
+
+Used in: Logistic Regression, Naive Bayes, uncertainty reasoning
+
+Statistics (ABSOLUTE CORE)
+Mean, median, variance, standard deviation
+
+Sampling techniques
+
+Hypothesis testing
+
+Confidence intervals
+
+Correlation vs causation
+
+Used in: EDA, model evaluation, decision making
+
+Optimization (IMPORTANT)
+Loss functions
+
+Gradient Descent
+
+Convex vs non-convex optimization
+
+Learning-rate intuition
+
+PART 5 — ADVANCED BUT JOB-RELEVANT TOPICS
+Natural Language Processing (NEEDED)
+Tokenization
+
+TF-IDF
+
+Word embeddings (basic)
+
+NLP pipelines using Spark
+
+Recommendation Systems (NEEDED)
+Collaborative filtering
+
+Content-based filtering
+
+Matrix factorization
+
+Explainable AI (IMPORTANT)
+Feature importance
+
+Model transparency fundamentals
+
+PART 6 — PRIORITY TABLE (NO AMBIGUITY)
+Priority	Topic	Mandatory for Job
+P0	Linear Algebra	YES
+P0	Probability & Statistics	YES
+P0	ML Fundamentals	YES
+P0	PySpark Core & DataFrames	YES
+P0	Feature Engineering	YES
+P0	Model Evaluation	YES
+P1	Spark Performance Tuning	YES
+P1	MLlib Pipelines	YES
+P1	NLP Basics	YES
+P1	Recommendation Systems	YES
+P2	Advanced XAI	Nice to have
+P2	Certifications	Optional
