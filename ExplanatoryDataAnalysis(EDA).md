@@ -278,16 +278,6 @@ Examples:
 * Ratings (Poor < Average < Good)
 
 ---
-
-## IMPORTANT DOUBTS CLARIFIED
-
----
-
-### ❓ Numeric-looking but categorical?
-
-Example:
-```text
-customer_id = 1023, 1024, 1025
 # EDA — SUBTOPIC 3: STATISTICAL SUMMARIES
 
 This section explains **why statistical summaries exist**, what each measure means,
