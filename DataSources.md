@@ -277,3 +277,246 @@ along with the doubts discussed.
 * Kafka is an event transport system.
 * Batch systems prioritize correctness.
 * Streaming systems prioritize timeliness.
+
+  # HOW TO IDENTIFY DATA TYPE FROM A DATA SOURCE (STRUCTURED vs SEMI-STRUCTURED vs UNSTRUCTURED)
+
+This section explains **HOW we know** what kind of data a data source provides  
+**based on the origin of the data**, not guesses.
+
+---
+
+## CORE IDEA (VERY IMPORTANT)
+
+> **The type of data is determined by how the DATA PRODUCER enforces structure,  
+> not by how the data looks at first glance.**
+
+Always think about the **source system**, not the file.
+
+---
+
+## STEP 1 — ASK THESE 4 QUESTIONS (MENTAL CHECKLIST)
+
+When you see any data source, ask:
+
+### 1. Is the schema enforced when data is written?
+* Yes → Structured
+* No → Semi-structured or Unstructured
+
+### 2. Do all records have the same fields?
+* Yes → Structured
+* No → Semi-structured
+
+### 3. Is the main content human-generated (text, image, audio, video)?
+* Yes → Unstructured
+
+### 4. Can this data naturally fit into rows and columns?
+* Yes → Structured
+* Partially → Semi-structured
+* No → Unstructured
+
+This checklist alone solves 80% of confusion.
+
+---
+
+## STEP 2 — IDENTIFY BY DATA SOURCE ORIGIN (INDUSTRY STANDARD)
+
+---
+
+## RELATIONAL DATABASES
+
+### Examples
+* MySQL
+* PostgreSQL
+* Oracle
+* SQL Server
+
+### How we know the data type
+* Schema is defined in advance
+* Columns and data types are enforced
+* Invalid data is rejected
+
+### Conclusion
+* **Data type: STRUCTURED**
+
+> If the database rejects bad data, the data is structured.
+
+---
+
+## FLAT FILE EXPORTS (CSV / TSV)
+
+### Examples
+* Daily reports
+* Vendor data dumps
+* Historical snapshots
+
+### How we know the data type
+* Columns are fixed
+* Each row follows the same structure
+* Types are assumed per column
+
+### Conclusion
+* **Data type: STRUCTURED**
+
+Even though it’s a file, structure is assumed.
+
+---
+
+## APPLICATION LOGS (BACKEND LOGS)
+
+### Examples
+* Error logs
+* API request logs
+* Service logs
+
+### How we know the data type
+* Usually JSON or key-value
+* Fields may appear or disappear
+* No strict validation at write time
+
+### Conclusion
+* **Data type: SEMI-STRUCTURED**
+
+> Structure exists, but nothing enforces it.
+
+---
+
+## CLICKSTREAM EVENTS
+
+### Examples
+* Page views
+* Button clicks
+* Add to cart
+* Purchases
+
+### How we know the data type
+* Event-specific fields
+* Different events have different keys
+* Generated in real time
+* Often JSON
+
+### Conclusion
+* **Data type: SEMI-STRUCTURED**
+
+---
+
+## APIs (MOST COMMON CONFUSION)
+
+### Examples
+* REST APIs
+* External service responses
+
+### How we know the data type
+* Usually JSON
+* Optional fields
+* Version changes over time
+* Schema not strictly enforced
+
+### Conclusion
+* **Data type: SEMI-STRUCTURED**
+
+Unless explicitly validated (rare).
+
+---
+
+## DATA LAKES (S3, HDFS, ADLS)
+
+### Important clarification
+* Storage system does **NOT** define data type
+* File format inside storage defines it
+
+### How we decide
+| File Type | Data Type |
+|---------|----------|
+| CSV / TSV | Structured |
+| Parquet / ORC | Structured |
+| JSON | Semi-structured |
+| TXT | Unstructured |
+| Images | Unstructured |
+| Audio | Unstructured |
+
+---
+
+## HUMAN-GENERATED CONTENT
+
+### Examples
+* Reviews
+* Emails
+* Chat messages
+* Images
+* Audio recordings
+* Videos
+
+### How we know the data type
+* No fixed schema
+* Meaning is contextual
+* Needs interpretation
+
+### Conclusion
+* **Data type: UNSTRUCTURED**
+
+Metadata may be structured, but content is not.
+
+---
+
+## EDGE CASES (INTERVIEW IMPORTANT)
+
+---
+
+### JSON WITH FIXED FIELDS
+
+* Still **SEMI-STRUCTURED**
+* Because schema is not enforced
+* Can break anytime
+
+---
+
+### TEXT WITH METADATA
+
+Example:
+* Review text + rating
+
+Classification:
+* Text → Unstructured
+* Rating → Structured
+
+This is called **HYBRID DATA**.
+
+---
+
+### PARQUET FILES
+
+* Often assumed structured
+* Correct thinking:
+
+> Parquet stores structured columns,  
+> but data quality depends on upstream source.
+
+---
+
+## ONE-SENTENCE RULE (MEMORISE)
+
+> **Data type is decided by how strictly the PRODUCER enforces schema,  
+> not by how clean the data looks.**
+
+---
+
+## HOW TO ANSWER IN INTERVIEWS
+
+### Question
+> How do you know what type of data a source provides?
+
+### Strong Answer
+> I look at schema enforcement, consistency across records, and the system producing the data.
+
+---
+
+## FINAL QUICK SUMMARY
+
+* Databases → Structured
+* CSV / TSV → Structured
+* Logs → Semi-structured
+* Clickstream → Semi-structured
+* APIs → Semi-structured
+* Text / Images / Audio → Unstructured
+* Storage system does not define data type
+
