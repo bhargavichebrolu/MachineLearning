@@ -658,3 +658,58 @@ Statistical summaries such as mean, median, minimum, maximum, and standard devia
 * Min and max provide boundary checks
 * Variance measures spread
 * Statistics guide exploration, they do not make decisions
+# EDA — SUBTOPIC 4: DISTRIBUTIONS
+
+This section explains **what distributions are**, **why they are essential in EDA**, and **how they resolve the limitations of statistical summaries**.
+
+Distributions are the point where:
+- outliers become visible
+- skewness becomes obvious
+- mean vs median differences finally make sense
+
+---
+
+## WHAT IS A DISTRIBUTION?
+
+### Plain definition
+A **distribution** describes:
+> **How the values of a variable are spread across their range.**
+
+It does NOT focus on:
+- one specific row
+- one specific value
+
+It focuses on:
+- where most values lie
+- how frequently values occur
+- how values thin out toward extremes
+
+---
+
+## WHY DISTRIBUTIONS EXIST
+
+Statistical summaries:
+- compress data
+- hide structure
+
+Distributions:
+- reveal structure
+- provide context
+
+> **Distributions exist to show the shape and behavior of data that statistics alone cannot explain.**
+
+---
+
+## WHY STATISTICS ALONE ARE NOT ENOUGH
+
+Two datasets can have:
+- same mean
+- same median
+- same variance
+
+Yet behave completely differently.
+
+### Example
+
+Dataset A:
+
